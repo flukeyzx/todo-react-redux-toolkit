@@ -7,8 +7,10 @@ function Header() {
   const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(addTodo(input));
-    setInput("");
+    if (input !== "") {
+      dispatch(addTodo(input));
+      setInput("");
+    }
   };
   return (
     <div>
